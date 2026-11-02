@@ -180,7 +180,7 @@ func (c *Client) SetStatus(ctx context.Context, id, status, reason string) (*Art
 	return a, err
 }
 
-// Claim assigns a task to the caller with a lease (0 = the default 60 minutes).
+// Claim assigns a task to the caller with a lease (0 = the default 30 minutes).
 func (c *Client) Claim(ctx context.Context, id string, leaseMinutes int) error {
 	body := map[string]any{}
 	if leaseMinutes > 0 {
